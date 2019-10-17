@@ -24,7 +24,17 @@ class ViewController: UIViewController {
     @IBAction func numButtonPressed(_ sender: UIButton) {
         
         //What should happen when a number is entered into the keypad
-    
+        if let numVal = sender.currentTitle {
+            if let currentval = displayLabel.text {
+                if currentval != "0" {
+                    displayLabel.text = currentval + numVal
+                } else {
+                    displayLabel.text = numVal
+                }
+            } else {
+                displayLabel.text = numVal
+            }
+        }
     }
 
 }
